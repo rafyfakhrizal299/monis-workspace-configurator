@@ -20,8 +20,8 @@ import {
 const DEPOSIT_MULTIPLIER = 1.5;
 
 const initialConfiguration: WorkspaceConfiguration = {
-  deskId: desks[0].id,
-  chairId: chairs[0].id,
+  deskId: null,
+  chairId: null,
   accessories: {
     monitorCenter: null,
     monitorLeft: null,
