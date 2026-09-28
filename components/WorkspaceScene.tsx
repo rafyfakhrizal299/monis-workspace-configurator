@@ -140,11 +140,25 @@ const ChairSvg = ({ chair }: { chair: Product | null }) => {
   );
 };
 
-const MonitorSvg = ({ x, y, color, size = "normal" }: { x: number; y: number; color: string; size?: "normal" | "ultrawide" }) => {
+const MonitorSvg = ({
+  x,
+  y,
+  color,
+  size = "normal",
+  rotate = 0,
+}: {
+  x: number;
+  y: number;
+  color: string;
+  size?: "normal" | "ultrawide";
+  rotate?: number;
+}) => {
   const width = size === "ultrawide" ? 110 : 80;
   const height = size === "ultrawide" ? 52 : 52;
+  const centerX = width / 2;
+  const centerY = height / 2;
   return (
-    <g transform={`translate(${x}, ${y})`}>
+    <g transform={`translate(${x}, ${y}) rotate(${rotate}, ${centerX}, ${centerY})`}>
       <rect x={width / 2 - 8} y={height} width="16" height="14" fill="#2d3748" />
       <rect x={width / 2 - 22} y={height + 12} width="44" height="5" rx="2" fill="#2d3748" />
       <rect x="0" y="0" width={width} height={height} rx="4" fill={color} stroke="#1a202c" strokeWidth="2" />
@@ -213,9 +227,9 @@ const KeyboardSvg = ({ x, y }: { x: number; y: number }) => (
 
 const MouseSvg = ({ x, y }: { x: number; y: number }) => (
   <g transform={`translate(${x}, ${y})`}>
-    <ellipse cx="10" cy="8" rx="9" ry="13" fill="#edf2f7" stroke="#cbd5e0" strokeWidth="1" />
-    <path d="M10 0 L10 8" stroke="#a0aec0" strokeWidth="1.5" />
-    <ellipse cx="10" cy="8" rx="9" ry="13" fill="url(#mouseShadow)" opacity="0.2" />
+    <ellipse cx="13" cy="8" rx="13" ry="9" fill="#edf2f7" stroke="#cbd5e0" strokeWidth="1" />
+    <path d="M13 3 L13 8" stroke="#a0aec0" strokeWidth="1.5" />
+    <ellipse cx="13" cy="8" rx="13" ry="9" fill="url(#mouseShadow)" opacity="0.2" />
   </g>
 );
 
@@ -388,7 +402,7 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
         )}
 
         {lamp && (
-          <g transform="translate(470, 195)">
+          <g transform="translate(525, 205)">
             <motion.g
               key="lamp"
               initial={{ opacity: 0 }}
@@ -401,7 +415,7 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
         )}
 
         {monitorCenter && (
-          <g transform="translate(350, 221)">
+          <g transform="translate(360, 221)">
             <motion.g
               key="monitorCenter"
               initial={{ opacity: 0 }}
@@ -419,7 +433,7 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
         )}
 
         {monitorLeft && (
-          <g transform="translate(235, 224)">
+          <g transform="translate(285, 224)">
             <motion.g
               key="monitorLeft"
               initial={{ opacity: 0 }}
@@ -431,13 +445,14 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
                 y={0}
                 color={monitorLeft.color}
                 size={monitorLeft.id === "monitor-32-ultrawide" ? "ultrawide" : "normal"}
+                rotate={8}
               />
             </motion.g>
           </g>
         )}
 
         {monitorRight && (
-          <g transform="translate(470, 224)">
+          <g transform="translate(455, 224)">
             <motion.g
               key="monitorRight"
               initial={{ opacity: 0 }}
@@ -449,6 +464,7 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
                 y={0}
                 color={monitorRight.color}
                 size={monitorRight.id === "monitor-32-ultrawide" ? "ultrawide" : "normal"}
+                rotate={-8}
               />
             </motion.g>
           </g>
@@ -481,7 +497,7 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
         )}
 
         {mouse && (
-          <g transform="translate(430, 285)">
+          <g transform="translate(435, 285)">
             <motion.g
               key="mouse"
               initial={{ opacity: 0 }}
