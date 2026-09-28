@@ -6,7 +6,7 @@ Users can visually design their dream remote-work setup — pick a desk, chair, 
 
 ## Live Demo
 
-- **Deployed URL:** (added after Vercel deployment)
+- **Deployed URL:** https://monis-workspace-three.vercel.app
 
 ## Tech Stack
 
