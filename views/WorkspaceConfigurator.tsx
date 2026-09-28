@@ -23,6 +23,9 @@ export default function WorkspaceConfigurator() {
   const [drawer, setDrawer] = useState<DrawerTarget | null>(null);
   const [showSummary, setShowSummary] = useState(false);
 
+  const hasDesk = !!vm.selectedDesk;
+  const supportedDeskSlots = new Set(vm.selectedDesk?.slots ?? []);
+
   const hotspotConfig = useMemo(
     () => [
       {
@@ -31,6 +34,7 @@ export default function WorkspaceConfigurator() {
         y: "58%",
         label: "Add Desk",
         product: vm.selectedDesk,
+        disabled: false,
       },
       {
         slot: "chair" as HotspotSlot,
@@ -38,99 +42,118 @@ export default function WorkspaceConfigurator() {
         y: "72%",
         label: "Add Chair",
         product: vm.selectedChair,
+        disabled: false,
+      },
+      {
+        slot: "chair" as HotspotSlot,
+        x: "50%",
+        y: "72%",
+        label: "Add Chair",
+        product: vm.selectedChair,
+        disabled: !hasDesk,
       },
       {
         slot: "monitorCenter" as AccessorySlot,
-        x: "47%",
-        y: "47%",
+        x: "44%",
+        y: "46%",
         label: "Center Monitor",
         product: vm.configuration.accessories.monitorCenter
           ? accessories.find((p) => p.id === vm.configuration.accessories.monitorCenter)
           : null,
+        disabled: !hasDesk || !supportedDeskSlots.has("monitorCenter"),
       },
       {
         slot: "monitorLeft" as AccessorySlot,
-        x: "32%",
-        y: "49%",
+        x: "27%",
+        y: "48%",
         label: "Left Monitor",
         product: vm.configuration.accessories.monitorLeft
           ? accessories.find((p) => p.id === vm.configuration.accessories.monitorLeft)
           : null,
+        disabled: !hasDesk || !supportedDeskSlots.has("monitorLeft"),
       },
       {
         slot: "monitorRight" as AccessorySlot,
         x: "62%",
-        y: "49%",
+        y: "48%",
         label: "Right Monitor",
         product: vm.configuration.accessories.monitorRight
           ? accessories.find((p) => p.id === vm.configuration.accessories.monitorRight)
           : null,
+        disabled: !hasDesk || !supportedDeskSlots.has("monitorRight"),
       },
       {
         slot: "laptop" as AccessorySlot,
-        x: "57%",
-        y: "53%",
+        x: "56%",
+        y: "54%",
         label: "Laptop",
         product: vm.configuration.accessories.laptop
           ? accessories.find((p) => p.id === vm.configuration.accessories.laptop)
           : null,
+        disabled: !hasDesk || !supportedDeskSlots.has("laptop"),
       },
       {
         slot: "keyboard" as AccessorySlot,
-        x: "45%",
+        x: "42%",
         y: "58%",
         label: "Keyboard",
         product: vm.configuration.accessories.keyboard
           ? accessories.find((p) => p.id === vm.configuration.accessories.keyboard)
           : null,
+        disabled: !hasDesk || !supportedDeskSlots.has("keyboard"),
       },
       {
         slot: "mouse" as AccessorySlot,
-        x: "56%",
-        y: "59%",
+        x: "58%",
+        y: "60%",
         label: "Mouse",
         product: vm.configuration.accessories.mouse
           ? accessories.find((p) => p.id === vm.configuration.accessories.mouse)
           : null,
+        disabled: !hasDesk || !supportedDeskSlots.has("mouse"),
       },
       {
         slot: "lamp" as AccessorySlot,
-        x: "62%",
-        y: "45%",
+        x: "66%",
+        y: "44%",
         label: "Lamp",
         product: vm.configuration.accessories.lamp
           ? accessories.find((p) => p.id === vm.configuration.accessories.lamp)
           : null,
+        disabled: !hasDesk || !supportedDeskSlots.has("lamp"),
       },
       {
         slot: "plantLeft" as AccessorySlot,
-        x: "27%",
-        y: "48%",
+        x: "24%",
+        y: "47%",
         label: "Plant",
         product: vm.configuration.accessories.plantLeft
           ? accessories.find((p) => p.id === vm.configuration.accessories.plantLeft)
           : null,
+        disabled: !hasDesk || !supportedDeskSlots.has("plantLeft"),
       },
       {
         slot: "plantRight" as AccessorySlot,
-        x: "70%",
-        y: "48%",
+        x: "72%",
+        y: "47%",
         label: "Plant",
         product: vm.configuration.accessories.plantRight
           ? accessories.find((p) => p.id === vm.configuration.accessories.plantRight)
           : null,
+        disabled: !hasDesk || !supportedDeskSlots.has("plantRight"),
       },
       {
         slot: "coffeeStation" as AccessorySlot,
-        x: "68%",
+        x: "70%",
         y: "53%",
         label: "Coffee",
         product: vm.configuration.accessories.coffeeStation
           ? accessories.find((p) => p.id === vm.configuration.accessories.coffeeStation)
           : null,
+        disabled: !hasDesk || !supportedDeskSlots.has("coffeeStation"),
       },
     ],
-    [vm]
+    [vm, hasDesk, supportedDeskSlots]
   );
 
   const handleHotspotClick = (slot: HotspotSlot) => {
@@ -219,6 +242,7 @@ export default function WorkspaceConfigurator() {
             y={item.y}
             label={item.label}
             product={item.product ?? null}
+            disabled={item.disabled}
             onClick={() => handleHotspotClick(item.slot)}
           />
         ))}

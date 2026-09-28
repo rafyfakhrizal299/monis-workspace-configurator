@@ -341,10 +341,10 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
       <ScooterSvg />
 
       {/* Desk */}
-      <DeskSvg desk={desk} />
+      {desk && <DeskSvg desk={desk} />}
 
       {/* Chair */}
-      <ChairSvg chair={chair} />
+      {chair && <ChairSvg chair={chair} />}
 
       {/* Accessories on desk */}
       <AnimatePresence>
