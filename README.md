@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# monis.rent Workspace Configurator
+
+An interactive workspace builder for [monis.rent](https://monis.rent), a Bali-based office-equipment rental service for digital nomads and startups.
+
+Users can visually design their dream remote-work setup — pick a desk, chair, monitors, plants, lamps, and even lifestyle gear like surfboards and scooters — then review a monthly rental summary and hit "Rent".
+
+## Live Demo
+
+- **Deployed URL:** (added after Vercel deployment)
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animation:** Framer Motion
+- **Icons:** Lucide React
+- **Architecture:** MVVM (Model-View-ViewModel)
+
+## Architecture
+
+```
+models/           # Data models and product catalog
+viewmodels/       # React hooks that expose state + business logic
+views/            # Top-level page views
+components/       # Reusable UI components
+app/              # Next.js app router entry points
+```
+
+## Features
+
+- 3 desks, 3 chairs, and a range of accessories
+- Visual workspace preview that updates in real time
+- Slot-based accessory placement (center/left/right monitors, plants, etc.)
+- Monthly rental summary with deposit estimate
+- Mobile-responsive layout
+- Smooth animations and micro-interactions
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is configured for Vercel. Connect the GitHub repository to a Vercel project for automatic deploys.
