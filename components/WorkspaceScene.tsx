@@ -349,138 +349,148 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
       {/* Accessories on desk */}
       <AnimatePresence>
         {coffeeStation && (
-          <motion.g
-            key="coffeeStation"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transform="translate(500, 238)"
-          >
-            <CoffeeStationSvg x={0} y={0} />
-          </motion.g>
+          <g transform="translate(500, 238)">
+            <motion.g
+              key="coffeeStation"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <CoffeeStationSvg x={0} y={0} />
+            </motion.g>
+          </g>
         )}
 
         {plantLeft && (
-          <motion.g
-            key="plantLeft"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.5 }}
-            transform="translate(190, 205)"
-          >
-            <PlantSvg x={0} y={0} color={plantLeft.color} />
-          </motion.g>
+          <g transform="translate(190, 205)">
+            <motion.g
+              key="plantLeft"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <PlantSvg x={0} y={0} color={plantLeft.color} />
+            </motion.g>
+          </g>
         )}
 
         {plantRight && (
-          <motion.g
-            key="plantRight"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.5 }}
-            transform="translate(530, 205)"
-          >
-            <PlantSvg x={0} y={0} color={plantRight.color} />
-          </motion.g>
+          <g transform="translate(530, 205)">
+            <motion.g
+              key="plantRight"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <PlantSvg x={0} y={0} color={plantRight.color} />
+            </motion.g>
+          </g>
         )}
 
         {lamp && (
-          <motion.g
-            key="lamp"
-            initial={{ opacity: 0, rotate: -10 }}
-            animate={{ opacity: 1, rotate: 0 }}
-            exit={{ opacity: 0, rotate: -10 }}
-            transform="translate(470, 195)"
-          >
-            <LampSvg x={0} y={0} color={lamp.color} />
-          </motion.g>
+          <g transform="translate(470, 195)">
+            <motion.g
+              key="lamp"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <LampSvg x={0} y={0} color={lamp.color} />
+            </motion.g>
+          </g>
         )}
 
         {monitorCenter && (
-          <motion.g
-            key="monitorCenter"
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transform="translate(350, 221)"
-          >
-            <MonitorSvg
-              x={0}
-              y={0}
-              color={monitorCenter.color}
-              size={monitorCenter.id === "monitor-32-ultrawide" ? "ultrawide" : "normal"}
-            />
-          </motion.g>
+          <g transform="translate(350, 221)">
+            <motion.g
+              key="monitorCenter"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <MonitorSvg
+                x={0}
+                y={0}
+                color={monitorCenter.color}
+                size={monitorCenter.id === "monitor-32-ultrawide" ? "ultrawide" : "normal"}
+              />
+            </motion.g>
+          </g>
         )}
 
         {monitorLeft && (
-          <motion.g
-            key="monitorLeft"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transform="translate(235, 224)"
-          >
-            <MonitorSvg
-              x={0}
-              y={0}
-              color={monitorLeft.color}
-              size={monitorLeft.id === "monitor-32-ultrawide" ? "ultrawide" : "normal"}
-            />
-          </motion.g>
+          <g transform="translate(235, 224)">
+            <motion.g
+              key="monitorLeft"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <MonitorSvg
+                x={0}
+                y={0}
+                color={monitorLeft.color}
+                size={monitorLeft.id === "monitor-32-ultrawide" ? "ultrawide" : "normal"}
+              />
+            </motion.g>
+          </g>
         )}
 
         {monitorRight && (
-          <motion.g
-            key="monitorRight"
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 20 }}
-            transform="translate(470, 224)"
-          >
-            <MonitorSvg
-              x={0}
-              y={0}
-              color={monitorRight.color}
-              size={monitorRight.id === "monitor-32-ultrawide" ? "ultrawide" : "normal"}
-            />
-          </motion.g>
+          <g transform="translate(470, 224)">
+            <motion.g
+              key="monitorRight"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <MonitorSvg
+                x={0}
+                y={0}
+                color={monitorRight.color}
+                size={monitorRight.id === "monitor-32-ultrawide" ? "ultrawide" : "normal"}
+              />
+            </motion.g>
+          </g>
         )}
 
         {laptop && (
-          <motion.g
-            key="laptop"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transform="translate(430, 240)"
-          >
-            <LaptopSvg x={0} y={0} />
-          </motion.g>
+          <g transform="translate(430, 240)">
+            <motion.g
+              key="laptop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <LaptopSvg x={0} y={0} />
+            </motion.g>
+          </g>
         )}
 
         {keyboard && (
-          <motion.g
-            key="keyboard"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transform="translate(340, 277)"
-          >
-            <KeyboardSvg x={0} y={0} />
-          </motion.g>
+          <g transform="translate(340, 277)">
+            <motion.g
+              key="keyboard"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <KeyboardSvg x={0} y={0} />
+            </motion.g>
+          </g>
         )}
 
         {mouse && (
-          <motion.g
-            key="mouse"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transform="translate(430, 285)"
-          >
-            <MouseSvg x={0} y={0} />
-          </motion.g>
+          <g transform="translate(430, 285)">
+            <motion.g
+              key="mouse"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <MouseSvg x={0} y={0} />
+            </motion.g>
+          </g>
         )}
       </AnimatePresence>
     </svg>
