@@ -54,7 +54,7 @@ export default function WorkspaceConfigurator() {
       },
       {
         slot: "monitorCenter" as AccessorySlot,
-        x: "45%",
+        x: "46%",
         y: "42%",
         label: "Center Monitor",
         product: vm.configuration.accessories.monitorCenter
@@ -64,8 +64,8 @@ export default function WorkspaceConfigurator() {
       },
       {
         slot: "monitorLeft" as AccessorySlot,
-        x: "36%",
-        y: "43%",
+        x: "33%",
+        y: "42%",
         label: "Left Monitor",
         product: vm.configuration.accessories.monitorLeft
           ? accessories.find((p) => p.id === vm.configuration.accessories.monitorLeft)
@@ -74,8 +74,8 @@ export default function WorkspaceConfigurator() {
       },
       {
         slot: "monitorRight" as AccessorySlot,
-        x: "57%",
-        y: "43%",
+        x: "59%",
+        y: "42%",
         label: "Right Monitor",
         product: vm.configuration.accessories.monitorRight
           ? accessories.find((p) => p.id === vm.configuration.accessories.monitorRight)
@@ -84,8 +84,8 @@ export default function WorkspaceConfigurator() {
       },
       {
         slot: "laptop" as AccessorySlot,
-        x: "58%",
-        y: "48%",
+        x: "62%",
+        y: "47%",
         label: "Laptop",
         product: vm.configuration.accessories.laptop
           ? accessories.find((p) => p.id === vm.configuration.accessories.laptop)
@@ -104,7 +104,7 @@ export default function WorkspaceConfigurator() {
       },
       {
         slot: "mouse" as AccessorySlot,
-        x: "56%",
+        x: "58%",
         y: "55%",
         label: "Mouse",
         product: vm.configuration.accessories.mouse
@@ -114,8 +114,8 @@ export default function WorkspaceConfigurator() {
       },
       {
         slot: "lamp" as AccessorySlot,
-        x: "67%",
-        y: "39%",
+        x: "70%",
+        y: "38%",
         label: "Lamp",
         product: vm.configuration.accessories.lamp
           ? accessories.find((p) => p.id === vm.configuration.accessories.lamp)
@@ -124,7 +124,7 @@ export default function WorkspaceConfigurator() {
       },
       {
         slot: "plantLeft" as AccessorySlot,
-        x: "24%",
+        x: "22%",
         y: "45%",
         label: "Plant",
         product: vm.configuration.accessories.plantLeft
@@ -134,7 +134,7 @@ export default function WorkspaceConfigurator() {
       },
       {
         slot: "plantRight" as AccessorySlot,
-        x: "73%",
+        x: "76%",
         y: "45%",
         label: "Plant",
         product: vm.configuration.accessories.plantRight
@@ -144,8 +144,8 @@ export default function WorkspaceConfigurator() {
       },
       {
         slot: "coffeeStation" as AccessorySlot,
-        x: "71%",
-        y: "51%",
+        x: "72%",
+        y: "52%",
         label: "Coffee",
         product: vm.configuration.accessories.coffeeStation
           ? accessories.find((p) => p.id === vm.configuration.accessories.coffeeStation)
