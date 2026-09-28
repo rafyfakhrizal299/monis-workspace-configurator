@@ -182,7 +182,7 @@ const LaptopSvg = ({ x, y }: { x: number; y: number }) => (
 );
 
 const LampSvg = ({ x, y, color }: { x: number; y: number; color: string }) => (
-  <g transform={`translate(${x}, ${y})`}>
+  <g transform={`translate(${x}, ${y}) scale(-1, 1) translate(-62, 0)`}>
     <ellipse cx="20" cy="95" rx="18" ry="5" fill="#2d3748" opacity="0.2" />
     <rect x="15" y="75" width="10" height="18" rx="2" fill="#5a4632" />
     <path d="M20 75 L20 35" stroke="#5a4632" strokeWidth="4" strokeLinecap="round" />
@@ -445,7 +445,6 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
                 y={0}
                 color={monitorLeft.color}
                 size={monitorLeft.id === "monitor-32-ultrawide" ? "ultrawide" : "normal"}
-                rotate={8}
               />
             </motion.g>
           </g>
@@ -464,7 +463,6 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
                 y={0}
                 color={monitorRight.color}
                 size={monitorRight.id === "monitor-32-ultrawide" ? "ultrawide" : "normal"}
-                rotate={-8}
               />
             </motion.g>
           </g>
