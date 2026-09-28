@@ -354,7 +354,7 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transform="translate(500, 235)"
+            transform="translate(500, 238)"
           >
             <CoffeeStationSvg x={0} y={0} />
           </motion.g>
@@ -390,7 +390,7 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
             initial={{ opacity: 0, rotate: -10 }}
             animate={{ opacity: 1, rotate: 0 }}
             exit={{ opacity: 0, rotate: -10 }}
-            transform="translate(470, 208)"
+            transform="translate(470, 195)"
           >
             <LampSvg x={0} y={0} color={lamp.color} />
           </motion.g>
@@ -402,7 +402,7 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transform="translate(350, 210)"
+            transform="translate(350, 221)"
           >
             <MonitorSvg
               x={0}
@@ -419,7 +419,7 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            transform="translate(240, 218)"
+            transform="translate(235, 224)"
           >
             <MonitorSvg
               x={0}
@@ -436,7 +436,7 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
-            transform="translate(470, 218)"
+            transform="translate(470, 224)"
           >
             <MonitorSvg
               x={0}
@@ -465,7 +465,7 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            transform="translate(340, 275)"
+            transform="translate(340, 277)"
           >
             <KeyboardSvg x={0} y={0} />
           </motion.g>
@@ -477,7 +477,7 @@ export default function WorkspaceScene({ desk, chair, accessories }: WorkspaceSc
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            transform="translate(430, 280)"
+            transform="translate(430, 285)"
           >
             <MouseSvg x={0} y={0} />
           </motion.g>
